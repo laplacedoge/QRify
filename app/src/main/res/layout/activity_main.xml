@@ -6,35 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etQrCodeEncodingContent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:layout_margin="18dp"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnGenerateQrCode"
-        android:layout_width="200dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="120dp"
-        android:text="GENERATE"
-        android:textSize="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etQrCodeEncodingContent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/ivGeneratedQrCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGenerateQrCode" />
+            <TextView
+                android:id="@+id/tvQrCodeSize"
+                android:layout_width="128dp"
+                android:layout_height="24dp"
+                android:text="SIZE"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/sbQrCodeSize"
+                app:layout_constraintTop_toTopOf="@+id/sbQrCodeSize" />
+
+            <TextView
+                android:id="@+id/tvQrCodeMarginSize"
+                android:layout_width="128dp"
+                android:layout_height="24dp"
+                android:text="MARGIN"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/sbQrCodeMarginSize"
+                app:layout_constraintTop_toTopOf="@+id/sbQrCodeMarginSize" />
+
+            <TextView
+                android:id="@+id/tvQrCodeErrorCorrectionLevel"
+                android:layout_width="128dp"
+                android:layout_height="24dp"
+                android:text="CORRECTION"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/sbQrCodeErrorCorrectionLevel"
+                app:layout_constraintTop_toTopOf="@+id/sbQrCodeErrorCorrectionLevel" />
+
+            <SeekBar
+                android:id="@+id/sbQrCodeSize"
+                android:layout_width="256dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="330dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/sbQrCodeMarginSize"
+                android:layout_width="256dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/sbQrCodeSize"
+                app:layout_constraintTop_toBottomOf="@+id/sbQrCodeSize" />
+
+            <SeekBar
+                android:id="@+id/sbQrCodeErrorCorrectionLevel"
+                android:layout_width="256dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/sbQrCodeMarginSize"
+                app:layout_constraintTop_toBottomOf="@+id/sbQrCodeMarginSize" />
+
+            <EditText
+                android:id="@+id/etQrCodeEncodingContent"
+                android:layout_width="320dp"
+                android:layout_height="128dp"
+                android:layout_marginTop="24dp"
+                android:text="Input your encoding content here."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sbQrCodeErrorCorrectionLevel" />
+
+            <ImageView
+                android:id="@+id/ivGeneratedQrCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/sbQrCodeSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
